@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Checklist · Grabación de Audio | Musicala</title>
+  <meta name="description" content="Checklist rápido y claro para sesiones de audio: bases, micrófonos, interfaz/DAW, monitoreo, acústica, archivo y energía." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-head">
+    <div class="wrap">
+      <div class="brand">
+        <img src="logo.png" alt="Musicala" class="brand-logo" />
+        <div class="brand-text">
+          <h1 class="title">Checklist · Grabación de Audio</h1>
+          <p class="subtitle">Marca rápido, evita sorpresas y ¡a grabar con buen sonido!</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap" id="app">
+    <section class="hero" aria-labelledby="hero-title">
+      <h2 id="hero-title">¿Qué vas a grabar hoy?</h2>
+      <div class="hero-ctrl">
+        <label for="presetHero" class="visually-hidden">Elegir preset inicial</label>
+        <select id="presetHero" class="hero-select" aria-label="Preset inicial">
+          <option value="" selected disabled>Selecciona una opción…</option>
+          <option value="general">General</option>
+          <option value="voz_podcast">Voz / Podcast</option>
+          <option value="canto">Canto</option>
+          <option value="instrumento">Instrumento acústico</option>
+          <option value="linea_DI">Línea / DI (bajo, teclas)</option>
+          <option value="ensayo_en_vivo">Ensayo / En vivo</option>
+          <option value="foley_sfx">Foley / SFX</option>
+        </select>
+        <small class="hero-hint">Elige un preset para cargar la checklist sugerida. Nada se marca por defecto.</small>
+      </div>
+    </section>
+
+    <section id="content" hidden>
+      <div class="progress">
+        <div id="progressLive" class="visually-hidden" aria-live="polite"></div>
+        <progress id="prog" value="0" max="100" aria-label="Progreso del checklist"></progress>
+        <span id="progLbl" class="mono">0% listo · 0 de 0</span>
+      </div>
+
+      <section id="criticalAlert" class="alert" role="status" aria-live="polite">
+        <div class="alert-title">⚠️ Elementos críticos sin marcar:</div>
+        <ul id="criticalList" class="alert-list"></ul>
+      </section>
+
+      <!-- Bases -->
+      <section class="section" id="prep" aria-labelledby="h2-prep">
+        <div class="section-header">
+          <h2 class="section-title" id="h2-prep">Bases</h2>
+          <button class="accordion-btn" type="button" data-acc-btn aria-controls="grid-prep" aria-expanded="true">Contraer</button>
+        </div>
+        <div class="grid" id="grid-prep" data-acc-panel></div>
+      </section>
+
+      <!-- Micrófonos -->
+      <section class="section" id="mics" aria-labelledby="h2-mics">
+        <div class="section-header">
+          <h2 class="section-title" id="h2-mics">Micrófonos</h2>
+          <button class="accordion-btn" type="button" data-acc-btn aria-controls="grid-mics" aria-expanded="true">Contraer</button>
+        </div>
+        <div class="grid" id="grid-mics" data-acc-panel></div>
+      </section>
+
+      <!-- Interfaz / DAW -->
+      <section class="section" id="iface" aria-labelledby="h2-iface">
+        <div class="section-header">
+          <h2 class="section-title" id="h2-iface">Interfaz / DAW</h2>
+          <button class="accordion-btn" type="button" data-acc-btn aria-controls="grid-iface" aria-expanded="true">Contraer</button>
+        </div>
+        <div class="grid" id="grid-iface" data-acc-panel></div>
+      </section>
+
+      <!-- Monitoreo -->
+      <section class="section" id="monitor" aria-labelledby="h2-monitor">
+        <div class="section-header">
+          <h2 class="section-title" id="h2-monitor">Monitoreo</h2>
+          <button class="accordion-btn" type="button" data-acc-btn aria-controls="grid-monitor" aria-expanded="true">Contraer</button>
+        </div>
+        <div class="grid" id="grid-monitor" data-acc-panel></div>
+      </section>
+
+      <!-- Acústica / Espacio -->
+      <section class="section" id="room" aria-labelledby="h2-room">
+        <div class="section-header">
+          <h2 class="section-title" id="h2-room">Acústica / Espacio</h2>
+          <button class="accordion-btn" type="button" data-acc-btn aria-controls="grid-room" aria-expanded="true">Contraer</button>
+        </div>
+        <div class="grid" id="grid-room" data-acc-panel></div>
+      </section>
+
+      <!-- Archivo & Backup -->
+      <section class="section" id="file" aria-labelledby="h2-file">
+        <div class="section-header">
+          <h2 class="section-title" id="h2-file">Archivo &amp; Backup</h2>
+          <button class="accordion-btn" type="button" data-acc-btn aria-controls="grid-file" aria-expanded="true">Contraer</button>
+        </div>
+        <div class="grid" id="grid-file" data-acc-panel></div>
+      </section>
+
+      <!-- Energía / Seguridad -->
+      <section class="section" id="power" aria-labelledby="h2-power">
+        <div class="section-header">
+          <h2 class="section-title" id="h2-power">Energía / Seguridad</h2>
+          <button class="accordion-btn" type="button" data-acc-btn aria-controls="grid-power" aria-expanded="true">Contraer</button>
+        </div>
+        <div class="grid" id="grid-power" data-acc-panel></div>
+      </section>
+
+      <footer class="footer">
+        <small class="tip">Tip: deja 3–5 s de silencio antes y después de cada toma. Sirve para noise print y edición.</small>
+      </footer>
+    </section>
+  </main>
+
+  <template id="card-tpl">
+    <article class="card" data-id="">
+      <div class="card-emoji" aria-hidden="true">🧩</div>
+      <div class="card-body">
+        <div class="card-head">
+          <h3 class="card-title"></h3>
+          <div class="card-ctrls">
+            <span class="pill pill-critical" hidden>Crítico</span>
+            <button type="button" class="tip-btn" aria-label="Ver ayuda" aria-haspopup="dialog" aria-expanded="false" aria-controls="">?</button>
+            <label class="chk-label">
+              <input type="checkbox" class="bigchk" />
+              <span class="chk-vis">Listo</span>
+            </label>
+          </div>
+        </div>
+        <div class="badges"></div>
+        <p class="muted card-help" id=""></p>
+      </div>
+      <div class="tooltip" role="dialog" aria-modal="false" hidden>
+        <div class="tooltip-inner"></div>
+      </div>
+    </article>
+  </template>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>

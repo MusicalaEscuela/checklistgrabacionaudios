@@ -1,0 +1,74 @@
+{
+  "version": 2,
+  "defaults": { "preset": "general", "compact": false },
+  "sections": [
+    { "id": "prep",   "label": "Bases" },
+    { "id": "mics",   "label": "Micrófonos" },
+    { "id": "iface",  "label": "Interfaz / DAW" },
+    { "id": "monitor","label": "Monitoreo" },
+    { "id": "room",   "label": "Acústica / Espacio" },
+    { "id": "file",   "label": "Archivo & Backup" },
+    { "id": "power",  "label": "Energía / Seguridad" }
+  ],
+  "items": [
+    { "id": "bat_all",    "cat": "prep", "title": "Dispositivos cargados", "emoji": "🔌", "help": "Celulares, portátiles, inalámbricos. Tener los cargadores conectados", "critical": true },
+    { "id": "space_all",  "cat": "prep", "title": "Espacio libre ≥ 10 GB", "emoji": "📱", "help": "Libera o sube material a Drive/NAS para no cortar tomas.", "critical": true },
+    { "id": "notifs",     "cat": "prep", "title": "Modo avión / silencio", "emoji": "📵", "help": "Evita llamadas/notificaciones en toma.", "critical": true },
+    { "id": "plan",       "cat": "prep", "title": "Guion / estructura listos", "emoji": "📄", "help": "Orden de tomas, textos, cues y tiempos.", "critical": true },
+    { "id": "tempo_click","cat": "prep", "title": "Tempo / click definido", "emoji": "⏱️", "help": "Define BPM y compás si usarás metrónomo." },
+    { "id": "tuning",     "cat": "prep", "title": "Instrumentos afinados", "emoji": "🎸", "help": "Cuerdas nuevas si aplica; verifica afinadores.", "critical": true },
+
+    { "id": "mic_power",  "cat": "mics", "title": "Mic con batería / alimentación OK", "emoji": "🔋", "help": "Si inalámbrico, carga TX/RX; verifica niveles.", "critical": true },
+    { "id": "phantom",    "cat": "mics", "title": "+48V solo si se necesita", "emoji": "⚡", "help": "Activa phantom para condensador/DI activa. No en dinámicos pasivos." , "critical": true },
+    { "id": "mic_conn",   "cat": "mics", "title": "Conexiones firmes (XLR/TRS)", "emoji": "🔗", "help": "Cables sin chasquidos ni falsos contactos.", "critical": true },
+    { "id": "pop",        "cat": "mics", "title": "Filtro antipop / espuma", "emoji": "🫧", "help": "Evita plosivas y viento en voz/FOH." },
+    { "id": "shock",      "cat": "mics", "title": "Shockmount / soporte estable", "emoji": "🧷", "help": "Aísla vibraciones de mesa/piso." },
+    { "id": "placement",  "cat": "mics", "title": "Colocación & distancia correctas", "emoji": "🎯", "help": "Voz: 10–15 cm con antipop. Instrumento: apunta a fuente dulce, evita eje directo si es chillón.", "critical": true },
+    { "id": "pad_hp",     "cat": "mics", "title": "PAD / HPF según fuente", "emoji": "🎚️", "help": "Activa -10 dB si hay picos. Filtro pasa altos para rumble (<80–100 Hz)." },
+    { "id": "rf_check",   "cat": "mics", "title": "Chequeo RF (si inalámbrico)", "emoji": "📡", "help": "Frecuencias limpias; evita interferencias." },
+
+    { "id": "iface_conn", "cat": "iface", "title": "Interfaz conectada y reconocida", "emoji": "🖧", "help": "Seleccionada en DAW/SO como entrada/salida.", "critical": true },
+    { "id": "drivers",    "cat": "iface", "title": "Drivers correctos (ASIO/CoreAudio)", "emoji": "🧩", "help": "Evita controladores genéricos con alta latencia." },
+    { "id": "samplerate", "cat": "iface", "title": "Sample rate / bit depth", "emoji": "🎞️", "help": "Recomendado 48 kHz / 24-bit para video.", "critical": true },
+    { "id": "buffer",     "cat": "iface", "title": "Buffer para grabar (128–256)", "emoji": "📦", "help": "Baja latencia sin chasquidos. Sube en mezcla." },
+    { "id": "daw_session","cat": "iface", "title": "Sesión DAW/nombres de pista", "emoji": "🗂️", "help": "Plantilla, ruteos, color por pista, marcadores." },
+    { "id": "gain_stage", "cat": "iface", "title": "Ganancia: picos -12 a -6 dBFS", "emoji": "📏", "help": "Sin clip. Deja margen para dinámica.", "critical": true },
+    { "id": "latency",    "cat": "iface", "title": "Latencia / monitoreo directo", "emoji": "🔁", "help": "Activa ‘direct monitoring’ si hay delay molesto." },
+    { "id": "click_route","cat": "iface", "title": "Click solo a músicos", "emoji": "🎧", "help": "Evita que se cuele en micrófonos." },
+
+    { "id": "headphones", "cat": "monitor", "title": "Audífonos cerrados OK", "emoji": "🎧", "help": "Sin fugas; cable en buen estado.", "critical": true },
+    { "id": "speakers",   "cat": "monitor", "title": "Monitores de sala mute", "emoji": "🔇", "help": "Evita realimentación y filtraciones." },
+    { "id": "cue_mix",    "cat": "monitor", "title": "Mezcla de cue equilibrada", "emoji": "🧪", "help": "Voz/click base a gusto del intérprete." },
+    { "id": "level_safe", "cat": "monitor", "title": "Nivel seguro (< 85 dB)", "emoji": "🦻", "help": "Cuida la salud auditiva y evita fatiga." },
+    { "id": "talkback",   "cat": "monitor", "title": "Talkback funcionando", "emoji": "🎙️", "help": "Comunicación fluida entre control y sala." },
+
+    { "id": "noise",      "cat": "room", "title": "Ruido ambiente controlado", "emoji": "🤫", "help": "Cierra puertas/ventanas; avisa ‘grabando’.", "critical": true },
+    { "id": "hvac_off",   "cat": "room", "title": "HVAC/ventiladores apagados", "emoji": "🌀", "help": "Sólo si el calor lo permite. Prioriza silencio." },
+    { "id": "room_treat", "cat": "room", "title": "Tratamiento básico", "emoji": "🧺", "help": "Telones/mantas/paneles para controlar reverberación." },
+    { "id": "stand_stable","cat": "room", "title": "Pies de mic estables", "emoji": "📏", "help": "Sin juego en la rosca; contrapeso si boom largo.", "critical": true },
+    { "id": "distance",   "cat": "room", "title": "Evita esquinas/pared inmediata", "emoji": "📐", "help": "Aleja la fuente de reflexiones tempranas." },
+    { "id": "cable_safe", "cat": "room", "title": "Cables seguros / cinta", "emoji": "🦺", "help": "Evita tropiezos y zumbidos por tirones." },
+
+    { "id": "naming",     "cat": "file", "title": "Nombres consistentes", "emoji": "🏷️", "help": "Proyecto_Tema_Toma_YYYYMMDD. Evita ‘Audio 01’.", "critical": true },
+    { "id": "slate",      "cat": "file", "title": "Claqueta / palmada", "emoji": "🎬", "help": "Sirve para sincronía A/V y localizar tomas." },
+    { "id": "test_rec",   "cat": "file", "title": "Prueba 10–15 s y revisión", "emoji": "🧪", "help": "Revisa clicks, RF, pops, clipping, ruido.", "critical": true },
+    { "id": "backup",     "cat": "file", "title": "Plan de backup al terminar", "emoji": "☁️", "help": "Copia 1: disco; copia 2: nube (Drive/NAS).", "critical": true },
+    { "id": "notes",      "cat": "file", "title": "Notas de sesión / marcadores", "emoji": "📝", "help": "Anota tomas buenas, errores y cambios." },
+    { "id": "clock_sync", "cat": "file", "title": "Reloj maestro si hay varios equipos", "emoji": "⏰", "help": "Wordclock/LoopSync: evita drift entre interfaces." },
+
+    { "id": "power_clean","cat": "power", "title": "Regleta con supresor / UPS", "emoji": "🔌", "help": "Protege de picos y cortes.", "critical": true },
+    { "id": "ground",     "cat": "power", "title": "Mismo circuito / tierra limpia", "emoji": "🌎", "help": "Reduce hum. Evita bucles de tierra." },
+    { "id": "spares",     "cat": "power", "title": "Repuestos (XLR, pilas, adaptadores)", "emoji": "🧰", "help": "Siempre 1–2 cables extra." },
+    { "id": "timebox",    "cat": "power", "title": "Tiempo por toma estimado", "emoji": "⌛", "help": "Evita fatiga. Micro pausas planificadas." },
+    { "id": "voice_care", "cat": "power", "title": "Cuidado de la voz", "emoji": "🫖", "help": "Agua tibia, evitar lácteos, calentar antes." }
+  ],
+  "presets": {
+    "general": [],
+    "voz_podcast": ["mic_power","phantom","mic_conn","pop","placement","iface_conn","samplerate","buffer","gain_stage","latency","headphones","speakers","cue_mix","noise","room_treat","naming","test_rec","backup","power_clean"],
+    "canto": ["tuning","pop","placement","iface_conn","samplerate","gain_stage","latency","headphones","cue_mix","level_safe","noise","room_treat","stand_stable","naming","slate","test_rec","backup","voice_care"],
+    "instrumento": ["tuning","mic_conn","placement","pad_hp","iface_conn","samplerate","gain_stage","latency","headphones","noise","distance","stand_stable","naming","test_rec","backup","spares"],
+    "linea_DI": ["iface_conn","drivers","samplerate","buffer","gain_stage","latency","click_route","headphones","cue_mix","noise","naming","test_rec","backup","ground"],
+    "ensayo_en_vivo": ["mic_power","mic_conn","rf_check","pad_hp","iface_conn","samplerate","gain_stage","level_safe","speakers","talkback","noise","cable_safe","naming","slate","backup","power_clean","spares"],
+    "foley_sfx": ["mic_conn","placement","pad_hp","iface_conn","samplerate","gain_stage","headphones","noise","room_treat","distance","naming","test_rec","backup","notes"]
+  }
+}
